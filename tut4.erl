@@ -3,8 +3,11 @@
 
 
 
-list_legth([]) ->
-	0;
+list_legth(List) ->
+	list_legth(List,0).
 
-list_legth([First | Rest]) ->
-	1 + list_legth(Rest).
+list_legth([],Acc) ->
+	Acc;
+
+list_legth([_ | Rest], Acc) ->
+	list_legth(Rest,Acc + 1).
